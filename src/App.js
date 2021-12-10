@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactFlow from 'react-flow-renderer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const elements = [
+  {
+    id: '1',
+    type: 'input', // input node
+    data: { label: 'Paris' },
+    position: { x: 250, y: 25 },
+  },
+  // default node
+  {
+    id: '2',
+    // you can also pass a React component as a label
+    data: { label: <div>London</div> },
+    position: { x: 100, y: 125 },
+  },
+  {
+    id: '3',
+    type: 'output', // output node
+    data: { label: 'Mumbai' },
+    position: { x: 250, y: 250 },
+  },
+  // animated edge
+  { id: 'e1-2', source: '1', target: '2', animated: true },
+  { id: 'e2-3', source: '2', target: '3' },
+];
 
-export default App;
+export default () => (
+  <div style={{ height: 800 }}>
+    <ReactFlow elements={elements} />
+  </div>
+);

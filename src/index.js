@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UserProfileMappings from './attribute-mappings';
+// import CustomNodeExample from './custom-node';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UserProfileMappings />
+    {/* <CustomNodeExample /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
